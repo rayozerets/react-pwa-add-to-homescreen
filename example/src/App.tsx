@@ -13,11 +13,11 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://www.npmjs.com/package/react-pwa-add-to-homescreen"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          React PWA Add To Home Screen
         </a>
         <AddToHomeScreen />
       </header>
