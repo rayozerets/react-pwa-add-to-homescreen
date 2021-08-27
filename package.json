@@ -11,7 +11,8 @@
     "copy-files": "copyfiles -u 1 src/**/*.html src/**/*.css lib/esm/ && copyfiles -u 1 src/**/*.html src/**/*.css lib/cjs/",
     "build": "npm run clean && npm run build:esm && npm run build:cjs && npm run copy-files",
     "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir lib/cjs"
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "pwa",
@@ -34,5 +35,8 @@
   "peerDependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
-  }
+  },
+  "files": [
+    "/lib"
+ ]
 }
