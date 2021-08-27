@@ -1,0 +1,61 @@
+.add-to-home-screen-pwa {
+  text-align: center;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 10px;
+  width: 100%;
+  bottom: 0;
+  box-shadow: 0 -4px 4px rgb(0 0 0 / 4%);
+  border: 1px solid #cecece;
+  cursor: pointer;
+  color: #000;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='43.7' height='43.7' viewBox='0 0 73.7 73.7'><path opacity='.6' fill='black' d='M35.6 34.4L28 26.8l7.6-7.6c.2-.2.2-.5 0-.7l-.5-.5c-.2-.2-.5-.2-.7 0l-7.6 7.6-7.5-7.6c-.2-.2-.5-.2-.7 0l-.6.6c-.2.2-.2.5 0 .7l7.6 7.6-7.6 7.5c-.2.2-.2.5 0 .7l.5.5c.2.2.5.2.7 0l7.6-7.6 7.6 7.6c.2.2.5.2.7 0l.5-.5c.2-.2.2-.5 0-.7z'/></svg>") no-repeat right top #fff;
+}
+
+.add-to-home-screen-pwa p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: inherit;
+  text-rendering: optimizeLegibility;
+}
+
+.add-to-home-screen-pwa p.heading {
+  line-height: 1;
+  font-size: 1.6rem;
+}
+
+.add-to-home-screen-pwa .home, .share {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 1.25em;
+  height: 1.25em;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.add-to-home-screen-pwa .home {
+  background-image: url("data:image/svg+xml,<svg height='300' width='300' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><switch><g><path d='M81 2.5H19C9.9 2.5 2.5 9.9 2.5 19v62c0 9.1 7.4 16.5 16.5 16.5h62c9.1 0 16.5-7.4 16.5-16.5V19c0-9.1-7.4-16.5-16.5-16.5zm-3.2 51.7H54.2v23.6c0 2.3-1.9 4.2-4.2 4.2-1.2 0-2.2-.5-3-1.2-.8-.8-1.2-1.8-1.2-3V54.2H22.2c-1.2 0-2.2-.5-3-1.2-.8-.8-1.2-1.8-1.2-3 0-2.3 1.9-4.2 4.2-4.2h23.6V22.2c0-2.3 1.9-4.2 4.2-4.2 2.3 0 4.2 1.9 4.2 4.2v23.6h23.6c2.3 0 4.2 1.9 4.2 4.2.1 2.3-1.8 4.2-4.2 4.2z'/></g></switch></svg>");
+}
+
+.add-to-home-screen-pwa .share {
+  background-image: url("data:image/svg+xml,<svg height='300' width='300' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M79.636 28.404H59.515a2.5 2.5 0 1 0 0 5H77.636v55.271H22.364V33.404h18.509a2.5 2.5 0 0 0 0-5H20.364c-1.65 0-3 1.35-3 3v59.271c0 1.65 1.35 3 3 3h59.271c1.65 0 3-1.35 3-3V31.404c.001-1.65-1.349-3-2.999-3z'/><path d='M34.761 23.297l12.801-9.126v46.96a2.439 2.439 0 0 0 4.878 0V14.17l12.802 9.126a2.736 2.736 0 0 0 3.822-.641 2.74 2.74 0 0 0-.641-3.823l-16.832-12a2.74 2.74 0 0 0-3.182 0l-16.832 12a2.741 2.741 0 1 0 3.184 4.465z'/></svg>");
+}
+
+.add-to-home-screen-pwa button {
+  display: inline-block;
+  background-color: #c86b60;
+  color: #fff;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  padding: 1.1em 3.134em;
+  min-width: 90%;
+}
