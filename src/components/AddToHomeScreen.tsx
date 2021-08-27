@@ -51,7 +51,9 @@ export function AddToHomeScreen({ ...props }: IProps) {
 
   function onCloseNotify(cookieExpDays: number = 0) {
     setCookie(cookieName, cookieExpDays || expireDays);
-    initData && setInitData({ ...initData, openNotify: false });
+    if (initData) {
+      setInitData({ ...initData, openNotify: false });
+    }
   }
 
   function onInstallApp(event: React.MouseEvent<HTMLElement>) {
