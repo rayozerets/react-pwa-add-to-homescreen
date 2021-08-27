@@ -1,0 +1,21 @@
+{
+  "name": "react-pwa-add-to-homescreen",
+  "version": "1.0.0",
+  "description": "React Component install PWA - Add To Homescreen",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pwa",
+    "react",
+    "homescreen",
+    "android",
+    "ios"
+  ],
+  "author": "Alexandr Dronko",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.4.2"
+  }
+}
