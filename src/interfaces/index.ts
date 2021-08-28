@@ -1,4 +1,4 @@
-export type TPlatform = 'chromium-android' | 'iphone' | 'standalone';
+export type TPlatform = 'chromium-android' | 'safari-iphone' | 'standalone';
 
 export interface INavigator extends Navigator {
   standalone: boolean;

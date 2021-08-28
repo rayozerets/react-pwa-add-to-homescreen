@@ -3,6 +3,7 @@ import { TPlatform, INavigator } from '../interfaces';
 const testPlatform = {
   iPhone: /iphone/i,
   android: /android/i,
+  safari: /Safari/i,
 };
 
 export function getPlatform(): TPlatform | null {
@@ -14,12 +15,14 @@ export function getPlatform(): TPlatform | null {
 
   const isChromium = 'onbeforeinstallprompt' in window;
   const isAndroid = testPlatform.android.test(userAgent);
+
+  const isSafari = testPlatform.safari.test(userAgent);
   const isIPhone = testPlatform.iPhone.test(userAgent);
 
   if (isPwaIOS || isPwaChrome) {
     return 'standalone';
-  } else if (isIPhone) {
-    return 'iphone';
+  } else if (isIPhone && isSafari) {
+    return 'safari-iphone';
   } else if (isChromium && isAndroid) {
     return 'chromium-android';
   }

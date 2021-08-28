@@ -1,6 +1,6 @@
 {
   "name": "react-pwa-add-to-homescreen",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React Component install PWA - Add To Homescreen",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
@@ -12,13 +12,21 @@
     "build": "npm run clean && npm run build:esm && npm run build:cjs && npm run copy-files",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir lib/cjs",
-    "prepare" : "npm run build",
+    "prepare": "npm run build",
     "prepublishOnly": "npm run lint",
-    "version" : "npm run format && git add -A src",
-    "postversion" : "git push && git push --tags",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rayozerets/react-pwa-add-to-homescreen.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rayozerets/react-pwa-add-to-homescreen/issues"
+  },
+  "homepage": "https://github.com/rayozerets/react-pwa-add-to-homescreen/blob/master/README.md",
   "keywords": [
     "pwa",
     "react",

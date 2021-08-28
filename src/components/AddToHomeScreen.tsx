@@ -97,7 +97,7 @@ export function AddToHomeScreen({ ...props }: IProps) {
     let ComponentNotify = null;
     if (initData?.platform === 'chromium-android') {
       ComponentNotify = <Chromium translate={props.translate} styles={props.styles}/>;
-    } else if (initData?.platform === 'iphone') {
+    } else if (initData?.platform === 'safari-iphone') {
       ComponentNotify = <Safari translate={props.translate} styles={props.styles}/>;
     }
 
