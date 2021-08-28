@@ -10,5 +10,6 @@ export default function Chromium({translate, styles }: {
         <p className='heading' style={styles.heading}>{translate.headline}</p> : null
     }
     <p>{translate.chromiumAddHomeScreen || TRANSLATE_CHROME_ADD_HOME_SCREEN}</p>
+    <p>{translate.bottomline ? <p>{translate.bottomline}</p> : null}</p>
   </>
 }
