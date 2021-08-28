@@ -7,8 +7,8 @@ const testPlatform = {
 };
 
 export function getPlatform(): TPlatform | null {
-  const userAgent = window.navigator.userAgent;
   const navigator = window.navigator as INavigator;
+  const userAgent = navigator.userAgent;
 
   const isPwaIOS = !!navigator?.standalone;
   const isPwaChrome = window.matchMedia('(display-mode: standalone)').matches;

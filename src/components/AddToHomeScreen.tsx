@@ -40,7 +40,8 @@ export function AddToHomeScreen({ ...props }: IProps) {
 
     setTimeout(() => {
       const cookieVal = getCookieValue(cookieName);
-      setInitData({ platform, openNotify: !cookieVal && platform !== 'standalone' });
+      const isSupported = !!(platform);
+      setInitData({ platform, openNotify: isSupported && !cookieVal && platform !== 'standalone' });
     }, 1000);
 
     return () => {
