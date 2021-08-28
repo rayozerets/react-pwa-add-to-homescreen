@@ -21,6 +21,10 @@
   text-rendering: optimizeLegibility;
 }
 
+.add-to-home-screen-pwa p:first-of-type {
+  padding-top: .3rem;
+}
+
 .add-to-home-screen-pwa p.heading {
   line-height: 1;
   font-size: 1.6rem;
