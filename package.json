@@ -1,6 +1,6 @@
 {
   "name": "react-pwa-add-to-homescreen",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "React Component install PWA - Add To Homescreen",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
@@ -10,7 +10,7 @@
     "clean": "rimraf lib/",
     "build": "npm run clean && rollup -c",
     "start:example": "npm i && npm run build && rm -r node_modules && cd example && npm i file:.. && npm run start",
-    "prepare": "npm run build",
+    "prepare": "npm i && npm run build",
     "prepublishOnly": "npm run lint",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags",

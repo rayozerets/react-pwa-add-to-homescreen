@@ -29,7 +29,9 @@ export function AddToHomeScreen({ ...props }: IProps) {
   }
 
   function init() {
-    if ('onbeforeinstallprompt' in window) {
+    const existInstall = 'onbeforeinstallprompt' in window;
+    const timeoutInit = existInstall ? 2000 : 0;
+    if (existInstall) {
       window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
     }
     if ('onappinstalled' in window) {
@@ -42,7 +44,7 @@ export function AddToHomeScreen({ ...props }: IProps) {
       const cookieVal = getCookieValue(cookieName);
       const isSupported = !!(platform);
       setInitData({ platform, openNotify: isSupported && !cookieVal && platform !== 'standalone' });
-    }, 1000);
+    }, timeoutInit);
 
     return () => {
       window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
@@ -117,7 +119,7 @@ export function AddToHomeScreen({ ...props }: IProps) {
   useEffect(init, []);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(renderComponent, [initData]);
+  useEffect(renderComponent, [initData, eventInstall]);
 
   return <>{component}</>;
 }
