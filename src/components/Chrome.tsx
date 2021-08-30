@@ -1,7 +1,7 @@
 import { ITranslate, IStyles } from '../interfaces';
 import { TRANSLATE_CHROME_ADD_HOME_SCREEN } from '../constants';
 
-export default function Chromium({translate, styles }: {
+export default function Chrome({translate, styles }: {
   translate: Partial<ITranslate>, styles: Partial<IStyles>,
 }) {
   return <>

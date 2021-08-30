@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import '../styles/index.css';
 
-import Chromium from './Chromium';
+import Chrome from './Chrome';
 import Safari from './Safari';
 import Install from './Install';
 
@@ -89,20 +89,28 @@ export function AddToHomeScreen({ ...props }: IProps) {
   }
 
   function RenderComponentInstall() {
-    return <div onClick={() => onCloseNotify()}>
+    return <div
+      className='add-to-home-screen-pwa__notify'
+      onClick={() => onCloseNotify()}
+    >
       <Install onClick={onInstallApp} translate={props.translate} styles={props.styles}/>
     </div>;
   }
 
   function RenderComponentNotify() {
     let ComponentNotify = null;
-    if (initData?.platform === 'chromium-android') {
-      ComponentNotify = <Chromium translate={props.translate} styles={props.styles}/>;
+    if (initData?.platform === 'chrome-android') {
+      ComponentNotify = <Chrome translate={props.translate} styles={props.styles}/>;
     } else if (initData?.platform === 'safari-iphone') {
       ComponentNotify = <Safari translate={props.translate} styles={props.styles}/>;
     }
 
-    return ComponentNotify ? <div onClick={() => onCloseNotify()}>{ComponentNotify}</div> : null;
+    return ComponentNotify ? <div
+      className='add-to-home-screen-pwa__notify'
+      onClick={() => onCloseNotify()}
+    >
+      {ComponentNotify}
+    </div> : null;
   }
 
   // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -1,6 +1,7 @@
 .add-to-home-screen-pwa {
-  text-align: center;
+  display: table;
   position: fixed;
+  text-align: center;
   z-index: 1000;
   left: 50%;
   transform: translate(-50%, 0);
@@ -11,7 +12,11 @@
   border: 1px solid #cecece;
   cursor: pointer;
   color: #000;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='43.7' height='43.7' viewBox='0 0 73.7 73.7'><path opacity='.6' fill='black' d='M35.6 34.4L28 26.8l7.6-7.6c.2-.2.2-.5 0-.7l-.5-.5c-.2-.2-.5-.2-.7 0l-7.6 7.6-7.5-7.6c-.2-.2-.5-.2-.7 0l-.6.6c-.2.2-.2.5 0 .7l7.6 7.6-7.6 7.5c-.2.2-.2.5 0 .7l.5.5c.2.2.5.2.7 0l7.6-7.6 7.6 7.6c.2.2.5.2.7 0l.5-.5c.2-.2.2-.5 0-.7z'/></svg>") no-repeat right top #fff;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50.0' height='50.0' viewBox='0 0 45.0 100.0'><path opacity='.6' fill='black' d='M35.6 34.4L28 26.8l7.6-7.6c.2-.2.2-.5 0-.7l-.5-.5c-.2-.2-.5-.2-.7 0l-7.6 7.6-7.5-7.6c-.2-.2-.5-.2-.7 0l-.6.6c-.2.2-.2.5 0 .7l7.6 7.6-7.6 7.5c-.2.2-.2.5 0 .7l.5.5c.2.2.5.2.7 0l7.6-7.6 7.6 7.6c.2.2.5.2.7 0l.5-.5c.2-.2.2-.5 0-.7z'/></svg>") no-repeat right top #fff;
+}
+
+.add-to-home-screen-pwa__notify {
+  display: table-cell;
 }
 
 .add-to-home-screen-pwa p {
