@@ -29,17 +29,22 @@ All props for components `AddToHomeScreen`
 
 | Prop                            | Type     | Description                              |Default                                            |
 | ------------------------        | -------- | --------------------------------         |--------------------------------                   |
-| delayNotify?                    | number   | Show the message after some ms           | `0ms`                                             |
-| skipFirstVisit?                | boolean  | Show message only to returning visitors  | `true`                                            |
-| cookie?.name                    | string   | Set cookie name                          | `add-to-home-screen-pwa`                          |
-| cookie?.expireDays              | number   | Days to be notified again                | `30`                                              |
-| translate?.headline             | string   | Heading texts for notify components      | ``                                                |
-| translate?.bottomline           | string   | Bottom line texts for notify components  | ``                                                |
-| translate?.safariTapShare       | string   | Text tap share                           | `Tap "Share"`                                     |
-| translate?.safariAddHomeScreen  | string   | Text Safari "Add to Home Screen"         | `select "Add to Home Screen"`                     |
-| translate?.chromiumAddHomeScreen| string   | Text Chrome "Add to Home Screen"         | `Click "Add to Home Screen" in your browser menu` |
-| translate?.chromiumInstall      | string   | Text Chrome Install                      | `The app icon will be displayed on your screen`   |
-| translate?.buttonInstall        | string   | Text Chrome Button Install               | `install`                                         |
+| delayNotify?                    | number   | Show the message after some ms           | `0`                                             |
+| skipFirstVisit?                 | boolean  | Show message only 30 minutes after the first visit to the site  | `true`                                            |
+|                                 |          |                                          |                                                   |
+| cookie?                         | object   | Cookie params                            | `{}`                                              |
+| `cookie.name?`                  | string   | Set cookie name                          | `add-to-home-screen-pwa`                          |
+| `cookie.expireDays?`            | number   | Days to be notified again                | `30`                                              |
+| styles?                         | object   | Override or extend the styles applied to the component.| `{}`                                |
+|                                 |          |                                          |                                                   |
+| translate?                      | object   | Translate texts for notify components    | `{}`                                              |
+| `translate.headline?`             | string   | Heading texts for notify components      | `''`                                              |
+| `translate.bottomline?`           | string   | Bottom line texts for notify components  | `''`                                              |
+| `translate.safariTapShare?`       | string   | Text tap share                           | `Tap "Share"`                                     |
+| `translate.safariAddHomeScreen?`  | string   | Text Safari "Add to Home Screen"         | `select "Add to Home Screen"`                     |
+| `translate.chromiumAddHomeScreen?`| string   | Text Chrome "Add to Home Screen"         | `Click "Add to Home Screen" in your browser menu` |
+| `translate.chromiumInstall?`      | string   | Text Chrome Install                      | `The app icon will be displayed on your screen`   |
+| `translate.buttonInstall?`        | string   | Text Chrome Button Install               | `install`                                         |
 
 
 ## Example
