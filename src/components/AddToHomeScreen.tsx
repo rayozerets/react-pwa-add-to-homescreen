@@ -31,7 +31,7 @@ export function AddToHomeScreen({ ...props }: IProps) {
   }
 
   function handleAppInstalled() {
-    onCloseNotify(expireDays + 30);
+    // onCloseNotify(expireDays + 30);
   }
 
   function init() {
@@ -48,12 +48,14 @@ export function AddToHomeScreen({ ...props }: IProps) {
     }
 
     const existInstall = 'onbeforeinstallprompt' in window;
+    const existOnInstalled = 'onappinstalled' in window;
+
     const timeoutInit = existInstall ? Math.max(1500, props.delayNotify)  : props.delayNotify;
 
     if (existInstall) {
       window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
     }
-    if ('onappinstalled' in window) {
+    if (existOnInstalled) {
       window.addEventListener('appinstalled', handleAppInstalled);
     }
 
@@ -66,8 +68,12 @@ export function AddToHomeScreen({ ...props }: IProps) {
     }, timeoutInit);
 
     return () => {
-      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-      window.removeEventListener('appinstalled', handleAppInstalled);
+      if (existInstall) {
+        window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+      }
+      if (existOnInstalled) {
+        window.removeEventListener('appinstalled', handleAppInstalled);
+      }
     }
   }
 
@@ -83,7 +89,7 @@ export function AddToHomeScreen({ ...props }: IProps) {
     if (eventInstall) {
       eventInstall.prompt()
       .then(() => eventInstall.userChoice)
-      .then((choiceResult) => choiceResult.outcome !== 'accepted' && onCloseNotify())
+      .then((choiceResult) => choiceResult.outcome === 'accepted' && onCloseNotify(expireDays + 30))
       .catch(() => onCloseNotify());
     } else {
       onCloseNotify();
