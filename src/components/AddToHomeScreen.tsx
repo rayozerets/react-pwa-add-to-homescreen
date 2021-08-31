@@ -37,7 +37,7 @@ export function AddToHomeScreen({ ...props }: IProps) {
     }
 
     const existInstall = 'onbeforeinstallprompt' in window;
-    const timeoutInit = existInstall ? Math.max(1000, props.delayNotify)  : props.delayNotify;
+    const timeoutInit = existInstall ? Math.max(2000, props.delayNotify)  : props.delayNotify;
 
     if (existInstall) {
       window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
