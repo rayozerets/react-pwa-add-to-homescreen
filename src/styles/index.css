@@ -12,7 +12,7 @@
   border: 1px solid #cecece;
   cursor: pointer;
   color: #000;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50.0' height='50.0' viewBox='0 0 45.0 100.0'><path opacity='.6' fill='black' d='M35.6 34.4L28 26.8l7.6-7.6c.2-.2.2-.5 0-.7l-.5-.5c-.2-.2-.5-.2-.7 0l-7.6 7.6-7.5-7.6c-.2-.2-.5-.2-.7 0l-.6.6c-.2.2-.2.5 0 .7l7.6 7.6-7.6 7.5c-.2.2-.2.5 0 .7l.5.5c.2.2.5.2.7 0l7.6-7.6 7.6 7.6c.2.2.5.2.7 0l.5-.5c.2-.2.2-.5 0-.7z'/></svg>") no-repeat right top #fff;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50.0' height='50.0' viewBox='0 0 40.0 100.0'><path opacity='.6' fill='black' d='M35.6 34.4L28 26.8l7.6-7.6c.2-.2.2-.5 0-.7l-.5-.5c-.2-.2-.5-.2-.7 0l-7.6 7.6-7.5-7.6c-.2-.2-.5-.2-.7 0l-.6.6c-.2.2-.2.5 0 .7l7.6 7.6-7.6 7.5c-.2.2-.2.5 0 .7l.5.5c.2.2.5.2.7 0l7.6-7.6 7.6 7.6c.2.2.5.2.7 0l.5-.5c.2-.2.2-.5 0-.7z'/></svg>") no-repeat right top #fff;
 }
 
 .add-to-home-screen-pwa__notify {
@@ -33,6 +33,7 @@
 .add-to-home-screen-pwa__notify p.heading {
   line-height: 1;
   font-size: 1.6rem;
+  margin-top: .3rem;
 }
 
 .add-to-home-screen-pwa__notify .home, .share {
