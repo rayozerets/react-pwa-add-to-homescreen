@@ -30,7 +30,7 @@ All props for components `AddToHomeScreen`
 | Prop                            | Type     | Description                              |Default                                            |
 | ------------------------        | -------- | --------------------------------         |--------------------------------                   |
 | delayNotify?                    | number   | Show the message after some ms           | `0`                                             |
-| skipFirstVisit?                 | boolean  | Show message only 30 minutes after the first visit to the site  | `true`                                            |
+| skipFirstVisit?                 | boolean  | Show message only to returning visitors  | `true`                                            |
 |                                 |          |                                          |                                                   |
 | cookie?                         | object   | Cookie params                            | `{}`                                              |
 | `cookie.name?`                  | string   | Set cookie name                          | `add-to-home-screen-pwa`                          |

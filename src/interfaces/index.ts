@@ -43,3 +43,8 @@ export interface IInitData {
   platform: TPlatform | null;
   openNotify: boolean;
 }
+
+export interface IMemoSession {
+  eventInstall?: BeforeInstallPromptEvent;
+  firstVisit: boolean;
+}

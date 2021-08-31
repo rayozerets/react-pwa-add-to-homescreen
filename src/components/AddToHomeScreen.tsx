@@ -6,22 +6,28 @@ import Chrome from './Chrome';
 import Safari from './Safari';
 import Install from './Install';
 
+import { MemoSession } from '../utils/MemoSession';
 import { getPlatform } from '../utils/platform';
 import { setCookie, getCookieValue } from '../utils/cookie';
 
 import { BeforeInstallPromptEvent, IProps, IInitData } from '../interfaces';
 import { COOKIE_NAME, COOKIE_EXPIRE_DAYS } from '../constants';
 
+const memoSession = new MemoSession();
+
 export function AddToHomeScreen({ ...props }: IProps) {
   const [component, setComponent] = useState<JSX.Element | null>(null)
-  const [eventInstall, setEventInstall] = useState<BeforeInstallPromptEvent>();
+  const [eventInstall, setEventInstall] = useState<BeforeInstallPromptEvent | undefined>(memoSession.eventInstall);
   const [initData, setInitData] = useState<IInitData>();
   const cookieName = (props.cookie.name || COOKIE_NAME);
   const expireDays = (props.cookie.expireDays || COOKIE_EXPIRE_DAYS);
 
   function handleBeforeInstallPrompt(event: Event) {
     event.preventDefault();
-    setEventInstall(event as BeforeInstallPromptEvent);
+    if (!memoSession.eventInstall) {
+      setEventInstall(event as BeforeInstallPromptEvent);
+      memoSession.setSession({ eventInstall: event as BeforeInstallPromptEvent });
+    }
   }
 
   function handleAppInstalled() {
@@ -32,12 +38,17 @@ export function AddToHomeScreen({ ...props }: IProps) {
     const cookieVal = getCookieValue(cookieName);
 
     if (props.skipFirstVisit && !cookieVal) {
-      setCookie(cookieName, expireDays, 'initialized');
+      setCookie(cookieName, 90, 'initialized');
+      memoSession.setSession({ firstVisit: true });
+      return;
+    }
+
+    if (memoSession.firstVisit) {
       return;
     }
 
     const existInstall = 'onbeforeinstallprompt' in window;
-    const timeoutInit = existInstall ? Math.max(2000, props.delayNotify)  : props.delayNotify;
+    const timeoutInit = existInstall ? Math.max(1500, props.delayNotify)  : props.delayNotify;
 
     if (existInstall) {
       window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
