@@ -20,7 +20,7 @@
 }
 
 .add-to-home-screen-pwa__notify p {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   line-height: 1.6;
   font-size: inherit;
   text-rendering: optimizeLegibility;
@@ -33,7 +33,7 @@
 .add-to-home-screen-pwa__notify p.heading {
   line-height: 1;
   font-size: 1.6rem;
-  margin-top: .3rem;
+  margin-top: 0;
 }
 
 .add-to-home-screen-pwa__notify .home, .share {

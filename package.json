@@ -1,6 +1,6 @@
 {
   "name": "react-pwa-add-to-homescreen",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "React Component install PWA - Add To Homescreen",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
