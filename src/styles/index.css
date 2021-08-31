@@ -31,7 +31,7 @@
 }
 
 .add-to-home-screen-pwa__notify p.heading {
-  line-height: 1;
+  line-height: 0.3em;
   font-size: 1.6rem;
   margin-top: 0;
 }
