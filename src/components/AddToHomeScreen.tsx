@@ -137,7 +137,7 @@ AddToHomeScreen.defaultProps = {
 }
 
 AddToHomeScreen.propTypes = {
-  delayNotify: PropTypes.number;
+  delayNotify: PropTypes.number,
   skipFirstVisit: PropTypes.bool,
   cookie: PropTypes.shape({ name: PropTypes.string, expireDays: PropTypes.number }),
   translate: PropTypes.shape({
