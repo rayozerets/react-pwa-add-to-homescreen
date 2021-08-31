@@ -29,8 +29,16 @@ export function AddToHomeScreen({ ...props }: IProps) {
   }
 
   function init() {
+    const cookieVal = getCookieValue(cookieName);
+
+    if (props.skipFirstVisit && !cookieVal) {
+      setCookie(cookieName, expireDays, 'initialized');
+      return;
+    }
+
     const existInstall = 'onbeforeinstallprompt' in window;
-    const timeoutInit = existInstall ? 2000 : 0;
+    const timeoutInit = existInstall ? Math.min(1000, props.delayNotify)  : props.delayNotify;
+
     if (existInstall) {
       window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
     }
@@ -41,9 +49,9 @@ export function AddToHomeScreen({ ...props }: IProps) {
     const platform = getPlatform();
 
     setTimeout(() => {
-      const cookieVal = getCookieValue(cookieName);
       const isSupported = !!(platform);
-      setInitData({ platform, openNotify: isSupported && !cookieVal && platform !== 'standalone' });
+      const isNotNotify = cookieVal !== 'notified';
+      setInitData({ platform, openNotify: isSupported && isNotNotify && platform !== 'standalone' });
     }, timeoutInit);
 
     return () => {
@@ -124,9 +132,13 @@ export function AddToHomeScreen({ ...props }: IProps) {
   return <>{component}</>;
 }
 
-AddToHomeScreen.defaultProps = { cookie: {}, translate: {}, styles: {} }
+AddToHomeScreen.defaultProps = {
+  delayNotify: 0, skipFirstVisit: true, cookie: {}, translate: {}, styles: {}
+}
 
 AddToHomeScreen.propTypes = {
+  delayNotify: PropTypes.number;
+  skipFirstVisit: PropTypes.bool,
   cookie: PropTypes.shape({ name: PropTypes.string, expireDays: PropTypes.number }),
   translate: PropTypes.shape({
     headline: PropTypes.string,
@@ -143,5 +155,3 @@ AddToHomeScreen.propTypes = {
     heading: PropTypes.object,
   })
 }
-
-// export default AddToHomeScreen;

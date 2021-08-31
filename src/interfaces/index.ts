@@ -1,4 +1,5 @@
 export type TPlatform = 'chromium-android' | 'chrome-android' | 'safari-iphone' | 'standalone';
+export type TCookieVal = 'notified' | 'initialized';
 
 export interface INavigator extends Navigator {
   standalone: boolean;
@@ -31,6 +32,8 @@ export interface IStyles {
   heading: React.CSSProperties;
 }
 export interface IProps {
+  delayNotify: number;
+  skipFirstVisit: boolean;
   cookie: { name?: string; expireDays?: number };
   translate: Partial<ITranslate>;
   styles: Partial<IStyles>;
