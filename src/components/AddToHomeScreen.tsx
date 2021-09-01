@@ -88,9 +88,13 @@ export function AddToHomeScreen({ ...props }: IProps) {
     event.stopPropagation();
     if (eventInstall) {
       eventInstall.prompt()
-      .then(() => eventInstall.userChoice)
-      .then((choiceResult) => choiceResult.outcome === 'accepted' && onCloseNotify(expireDays + 30))
-      .catch(() => onCloseNotify());
+        .then(() => eventInstall.userChoice)
+        .then((choiceResult) => {
+          onCloseNotify(choiceResult.outcome === 'accepted' ? expireDays + 30 : expireDays);
+          setEventInstall(undefined);
+          memoSession.setSession({ eventInstall: undefined });
+        })
+        .catch(() => onCloseNotify());
     } else {
       onCloseNotify();
     }
