@@ -20,20 +20,16 @@
 }
 
 .add-to-home-screen-pwa__notify p {
-  margin-bottom: 0.5rem;
-  line-height: 1.6;
   font-size: inherit;
   text-rendering: optimizeLegibility;
 }
 
 .add-to-home-screen-pwa__notify p:first-of-type {
-  padding-top: .4rem;
-  margin-top: .4rem;
+  margin-top: .7rem;
 }
 
 .add-to-home-screen-pwa__notify p.heading {
-  line-height: 0.4em;
-  font-size: 1.6rem;
+  font-weight: 600;
 }
 
 .add-to-home-screen-pwa__notify .home, .share {
@@ -67,5 +63,4 @@
   cursor: pointer;
   letter-spacing: 0.1em;
   padding: 1.1em 3.134em;
-  min-width: 90%;
 }

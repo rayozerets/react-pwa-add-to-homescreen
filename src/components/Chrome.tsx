@@ -9,7 +9,9 @@ export default function Chrome({translate, styles }: {
       translate.headline ?
         <p className='heading' style={styles.heading}>{translate.headline}</p> : null
     }
-    <p>{translate.chromiumAddHomeScreen || TRANSLATE_CHROME_ADD_HOME_SCREEN}</p>
-    <p>{translate.bottomline ? <p>{translate.bottomline}</p> : null}</p>
+    <p>
+      {translate.chromiumAddHomeScreen || TRANSLATE_CHROME_ADD_HOME_SCREEN}
+      {translate.bottomline ? <><br/>{translate.bottomline}</> : null}
+    </p>
   </>
 }

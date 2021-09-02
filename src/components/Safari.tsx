@@ -11,12 +11,11 @@ export default function Safari({ translate, styles }: {
           <p className='heading' style={styles.heading}>{translate.headline}</p> : null
       }
       <p>
-        {translate.safariTapShare || TRANSLATE_SAFARI_TAP_SHARE} <i className="share"></i>
+        {translate.safariTapShare || TRANSLATE_SAFARI_TAP_SHARE} <i className='share'></i>
         <br/>
-        {translate.safariAddHomeScreen || TRANSLATE_SAFARI_ADD_HOME_SCREEN} <i className="home"></i>
-        <br/>
+        {translate.safariAddHomeScreen || TRANSLATE_SAFARI_ADD_HOME_SCREEN} <i className='home'></i>
+        {translate.bottomline ? <><br/>{translate.bottomline}</> : null}
       </p>
-      <p>{translate.bottomline ? <p>{translate.bottomline}</p> : null}</p>
     </>
   )
 }
