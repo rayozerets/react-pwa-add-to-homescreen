@@ -4,6 +4,7 @@ const testPlatform = {
   iPhone: /iphone/i,
   android: /android/i,
   chrome: /Chrome/i,
+  criOS: /CriOS/i,
   safari: /Safari/i,
 };
 
@@ -19,11 +20,12 @@ export function getPlatform(): TPlatform | null {
 
   const isChrome = testPlatform.chrome.test(userAgent);
   const isSafari = testPlatform.safari.test(userAgent);
+  const isCriOS = testPlatform.criOS.test(userAgent);
   const isIPhone = testPlatform.iPhone.test(userAgent);
 
   if (isPwaIOS || isPwaChrome) {
     return 'standalone';
-  } else if (isIPhone && isSafari) {
+  } else if (isIPhone && isSafari && !isCriOS) {
     return 'safari-iphone';
   } else if (isChrome && isChromium && isAndroid) {
     return 'chrome-android';
