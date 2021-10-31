@@ -61,7 +61,7 @@ export function AddToHomeScreen({ ...props }: IProps) {
 
     const platform = getPlatform();
 
-    setTimeout(() => {
+    const delayTimeout = setTimeout(() => {
       const isSupported = !!(platform);
       const isNotNotify = cookieVal !== 'notified';
       setInitData({ platform, openNotify: isSupported && isNotNotify && platform !== 'standalone' });
@@ -74,6 +74,7 @@ export function AddToHomeScreen({ ...props }: IProps) {
       if (existOnInstalled) {
         window.removeEventListener('appinstalled', handleAppInstalled);
       }
+      clearTimeout(delayTimeout);
     }
   }
 
