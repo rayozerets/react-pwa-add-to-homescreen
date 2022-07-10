@@ -1,7 +1,7 @@
 import { ITranslate, IStyles } from '../interfaces';
 import { TRANSLATE_INSTALL_BUTTON, TRANSLATE_CHROME_INSTALL } from '../constants';
 
-export default function Safari({ translate, onClick, styles }: {
+export default function Install({ translate, onClick, styles }: {
   translate: Partial<ITranslate>,
   onClick: (event: React.MouseEvent<HTMLElement>) => void,
   styles: Partial<IStyles>
